@@ -1,0 +1,31 @@
+extends layout
+block content
+  div.container_12#main-container(style="background:#fdfbfc url(/images/beta-ribbon.png) 100% 0 no-repeat")
+    div.grid_8.alpha.omega.push_2
+      h1(style="background:url(images/title.gif) no-repeat 50% 0%; height:46px; text-indent:-9999px") Doors&Dots Beta Testing
+      h3(style="font-size:20pt; font-weight:bold; text-align:center;margin-top:30px") Get in at the Beginning!
+      ul(style="list-style:disc; padding-left:162px;margin-top:20px;color:#555")
+        li See the app before it hits the Apple App Store.
+        li Help us find and eliminate bugs.
+        li Provide us with your personal feedback.
+      form(action="/beta/apply", method="POST")
+        p(style="text-align:center;margin-top:30px;")
+          input(id="male", name="sex", value="male", type="radio", style="font-size:12pt;")
+          label(for="male",style="margin-right:40px;font-size:12pt") Male
+          input(id="female", name="sex", value="female", type="radio", style="font-size:12pt;")
+          label(for="female", style="font-size:12pt") Female
+        p(style="text-align:center;margin-top:30px;font-size:12pt") How did you hear about Doors & Dots?<br/>
+          select(name="how",style="width:40%;font-size:12pt;height:30px;-webkit-appearance:menulist-button;margin-top:20px;")
+            option(value="demo") Demo
+            option(value="facebook") Facebook
+            option(value="twitter") Twitter
+            option(value="printmedia") Print Media
+            option(value="friend") Friend
+            option(value="webpage") Webpage
+        p.grid_6.suffix_1.prefix_1.alpha.omega(style="text-align:center;margin-top:30px;margin-bottom:30px;")
+          input(name="email",style="border-radius:5px;border:1px solid #bbb;width:80%;font-size:20pt;height:40px;text-align:center",type="text", placeholder="your email")
+        - if (typeof(error) !== 'undefined') {
+        p(style="text-align:center;margin-bottom:30px;color:red")= error
+        -}
+        p(style="text-align:center;margin-bottom:30px;")
+          input.betabutton(type="submit", value="Submit")

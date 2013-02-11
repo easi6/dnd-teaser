@@ -1,0 +1,23 @@
+extends layout
+block content
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=403834713009435"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>
+  div.container_12#main-container(style="background:#fdfbfc url(/images/beta-ribbon.png) 100% 0 no-repeat")
+    div.grid_8.alpha.omega.push_2
+      h1(style="background:url(/images/title.gif) no-repeat 50% 0%; height:46px; text-indent:-9999px") Doors&Dots Beta Testing
+      p(style="text-align:center;margin-top:30px;")
+        img(src="/images/check2.png", style="width:200px;height:200px")
+      h2(style="text-align:center;font-size:20pt;font-weight:bold;") Submitted
+      div.prefix_1.suffix_1.grid_6.alpha.omega(style="margin-top:30px;color:#555")
+        p(style="line-height:150%;margin-bottom:10px;")
+          | Thanks for signing up to beta test Doors & Dots, the fast, easy way to create, discover, and share meetings and events with friends.
+        p(style="line-height:150%;margin-bottom:10px;")
+          | You should soon receive an email to <span style="color:#2E64FE">#{email}</span>, detailing how to download Doors & Dots to your iPhone device and start creating meetings.
+        p(style="line-height:150%;margin-bottom:10px;")
+          | For the latest news and developments about Doors & Dots, check out Doors & Dots on Twitter (<a href="https://twitter.com/doorsndots">@doorsndots</a>), follow the Discover easi6 <a href="http://blog.easi6.com">blog</a>, and like easi6 <a href="https://facebook.com/easi6">on Facebook</a>.
+      div.grid_1.prefix_3.suffix_4.alpha.omega
+        p(style="margin-top:30px;padding-left:30px;")
+          <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://doorsndots.com" data-via="doorsndots" data-size="large" data-hashtags="cometogether">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        div(style="margin-top:30px;padding-left:40px; margin-bottom:30px;")
+          <div class="fb-like" data-href="http://doorsndots.com" data-send="true" data-layout="box_count" data-width="55" data-show-faces="true"></div>

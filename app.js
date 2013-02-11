@@ -7,8 +7,13 @@ var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , git = require('./routes/git')
+	, beta = require('./routes/beta')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+	, sqlite3 = require('sqlite3')
+	, db = new sqlite3.Database('beta-applicants.sqlite')
+	, check = require('validator').check
+	, sanitize = require('validator').sanitize;
 
 var app = express();
 
@@ -31,6 +36,9 @@ app.configure('development', function(){
 
 app.get('/', routes.index);
 app.get('/users', user.list);
+app.get('/beta', beta.index);
+app.post('/beta/apply', beta.apply(check, sanitize, db));
+app.get('/beta/thanks', beta.thanks);
 app.post('/git/pushed', git.pushed);
 
 http.createServer(app).listen(app.get('port'), function(){
