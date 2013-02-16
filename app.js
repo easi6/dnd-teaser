@@ -13,7 +13,10 @@ var express = require('express')
 	, sqlite3 = require('sqlite3')
 	, db = new sqlite3.Database('beta-applicants.sqlite')
 	, check = require('validator').check
-	, sanitize = require('validator').sanitize;
+	, sanitize = require('validator').sanitize
+  , AWS = require('aws-sdk');
+AWS.config.loadFromPath('./awsconfig.json');
+var ses = new AWS.SES();
 
 var app = express();
 
@@ -37,7 +40,7 @@ app.configure('development', function(){
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/beta', beta.index);
-app.post('/beta/apply', beta.apply(check, sanitize, db));
+app.post('/beta/apply', beta.apply(check, sanitize, db, ses));
 app.get('/beta/thanks', beta.thanks);
 app.post('/git/pushed', git.pushed);
 

@@ -10,6 +10,7 @@
     "jade": "*",
     "stylus": "*",
 		"sqlite3":"*",
-		"validator":"*"
+		"validator":"*",
+    "aws-sdk":"*"
   }
 }
