@@ -1,13 +1,15 @@
+https = require('https');
+
 exports.index = function(req, res) {
-	res.render('beta', { title: 'Doors & Dots' });
+	res.render('beta', {ref:req.query.ref, title: 'Doors & Dots' });
 };
 
 exports.apply = function(check, sanitize, db, ses) {
 	return function(req,res) {
-		console.log("sex=" + sex + ", how=" +how+", email=" + email);
 		var email = sanitize(req.body.email).trim();
 		var sex = req.body.sex || "";
 		var how = req.body.how;
+		console.log("sex=" + sex + ", how=" +how+", email=" + email);
 		try {
       check(email).isEmail();
       var emailObj = {
@@ -35,8 +37,33 @@ exports.apply = function(check, sanitize, db, ses) {
         }
       });
 
+      //send test flight invitation right away
+      var reqbody = "email="+encodeURIComponent(email)+"&message=Hi%20easi6%20friend%2C%0A%0AWelcome%20to%20Doors%20%26%20Dots%20beta.%20%20We%27re%20excited%20to%20%23ComeTogether%20with%20you.%20%20Let%20the%20meetings%20begin%21%0A%0ABest%2C%0AJaehwa%20Han%0ACTO%20of%20easi6%0A";
+      var tfReq = https.request({hostname:"testflightapp.com", port:443, path:"/dashboard/team/members/add/", method:"POST", headers:{"Host":"testflightapp.com","Cookie":"tfapp=1b762e958964abc248fb5848a7f674f3", "Content-Length":reqbody.length}}, function(res) {
+        var cookies = res.headers["set-cookie"];
+        var c = undefined;
+        for (var i=0; i<cookies.length; i++) {
+          if (cookies[i].match(/^messages/) != null) {
+            c = cookies[i];
+            break;
+          }
+        }
+
+        if (typeof c === "undefined") {
+          console.log("testflight invite error for : " + email);
+        } else if (c.match(/Invitation Sent!/) != null) {
+          console.log("testflight invitation sent to : " + email);
+        } else if (c.match(/You have already invited/) != null) {
+          console.log("testflight invitation already exists for : " + email);
+        } else { //something went wrong
+          console.log("testflight invite error for : " + email);
+        }
+      });
+      tfReq.end(reqbody);
+
       db.run("INSERT INTO applicants VALUES (?, ?, ?)", email, how, sex, function(error) {
 				if (error) {
+          console.log("error : " + error.message);
 					return res.render("beta.jade", {title:"Doors & Dots", error: "Sorry. Something went wrong."});
 				}
 				res.redirect('/beta/thanks?email='+encodeURIComponent(email));

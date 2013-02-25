@@ -4,5 +4,9 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Doors & Dots' });
+  if (req.query.ref === "notif") {
+    res.redirect("/beta");
+  } else {
+    res.render('index', { title: 'Doors & Dots' });
+  }
 };

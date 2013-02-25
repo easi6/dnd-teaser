@@ -23,9 +23,78 @@ block content
             option(value="friend") Friend
             option(value="webpage") Webpage
         p.grid_6.suffix_1.prefix_1.alpha.omega(style="text-align:center;margin-top:30px;margin-bottom:30px;")
-          input(name="email",style="border-radius:5px;border:1px solid #bbb;width:80%;font-size:20pt;height:40px;text-align:center",type="text", placeholder="your email")
+          input(id="email",name="email",style="border-radius:5px;border:1px solid #bbb;width:80%;font-size:20pt;height:40px;text-align:center",type="text", placeholder="your email")
         - if (typeof(error) !== 'undefined') {
         p(style="text-align:center;margin-bottom:30px;color:red")= error
         -}
         p(style="text-align:center;margin-bottom:30px;")
           input.betabutton(type="submit", value="Submit")
+  script
+    function getUrlVars() {
+      var vars = [], hash;
+      var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+      for(var i = 0; i < hashes.length; i++) {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+      }
+      return vars;
+    }
+
+    function login() {
+      FB.login(function(response) {
+        if (response.authResponse) {
+          facebookLoaded();
+        } else {
+          $("#email").removeAttr("disabled");
+          $("#email").val("");
+          $("[type=submit]").unbind("click");
+          $("[type=submit]").val("Submit");
+        }
+      }, {scope: "email"});
+
+      return false;
+    }
+
+    function facebookLoaded() {
+      var queries = getUrlVars();
+      if (queries.ref !== "notif")
+        return;
+      //disable submit button for a while
+      var btn = $("[type=submit]")
+      btn.attr("disabled",true);
+      btn.val("Loading...");
+
+      $("#email").attr("disabled", true);
+      $("#email").val("Click the Facebook button");
+
+      FB.getLoginStatus(function(response) {
+        btn.removeAttr("disabled");
+        if (response.status === "connected") { 
+          FB.api('/me', function(response) {
+            if (response.gender === "male")
+              $("#male").attr("checked", true);
+            else if (response.gender === "female") 
+              $("#female").attr("checked", true);
+            $("[name=how]").val("facebook");
+
+            $("#email").removeAttr("disabled");
+            $("#email").val("");
+
+            if (typeof response.email !== "undefined") {
+              $("#email").val(response.email);
+            }
+
+            btn.val("Submit");
+            btn.unbind("click");
+          });
+        } else if (response.status === "not_authorized") {
+          //add dummy button to email box
+          btn.val("Facebook Login");
+          btn.click(login);
+        } else {
+          btn.val("Facebook Login");
+          btn.click(login);
+        }
+      });
+    }
