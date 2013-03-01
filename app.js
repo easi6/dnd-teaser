@@ -43,6 +43,7 @@ app.get('/beta', beta.index);
 app.post('/beta/apply', beta.apply(check, sanitize, db, ses));
 app.get('/beta/thanks', beta.thanks);
 app.post('/git/pushed', git.pushed);
+app.get('/m', routes.index);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
