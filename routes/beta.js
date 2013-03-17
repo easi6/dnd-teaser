@@ -39,7 +39,7 @@ exports.apply = function(check, sanitize, db, ses) {
 
       //send test flight invitation right away
       var reqbody = "email="+encodeURIComponent(email)+"&message=Hi%20easi6%20friend%2C%0A%0AWelcome%20to%20Doors%20%26%20Dots%20beta.%20%20We%27re%20excited%20to%20%23ComeTogether%20with%20you.%20%20Let%20the%20meetings%20begin%21%0A%0ABest%2C%0AJaehwa%20Han%0ACTO%20of%20easi6%0A";
-      var tfReq = https.request({hostname:"testflightapp.com", port:443, path:"/dashboard/team/members/add/", method:"POST", headers:{"Host":"testflightapp.com","Cookie":"tfapp=1b762e958964abc248fb5848a7f674f3", "Content-Length":reqbody.length}}, function(res) {
+      var tfReq = https.request({hostname:"testflightapp.com", port:443, path:"/dashboard/team/members/add/", method:"POST", headers:{"Host":"testflightapp.com","Cookie":"tfapp=94dc358b21bc548edfd07da1e5b9fa62", "Content-Length":reqbody.length}}, function(res) {
         var cookies = res.headers["set-cookie"];
         var c = undefined;
         for (var i=0; i<cookies.length; i++) {
