@@ -1,17 +1,228 @@
 body
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+  font: 14px Helvetica, "Lucida Grande", Arial, sans-serif
   //background:url(/images/extra_clean_paper_@2X.png)
-  background:url(/images/bg-dots.jpg)
 a
-  color: #54abd1
-#main-container
-  padding-top:40px
-  background:#fdfbfc
-  box-shadow: 0 0 10px #888
-  min-height:300px
-  border-bottom-right-radius:7px
-  border-bottom-left-radius:7px
-  margin-bottom:20px
+  text-decoration:none
+p
+  line-height:140%
+
+textcolor1=rgb(140,142,145)
+textcolor2=rgb(109,110,112)
+textcolor4=rgb(65,65,65)
+
+dnd_color_red=rgb(244,32,0)
+dnd_color_orange=rgb(240,150,4)
+dnd_color_11=rgb(109,110,112)
+dnd_color_green=rgb(114,172,128)
+
+
+#global-nav
+  margin-top:30px
+  li
+    float:left
+    font-weight:bold
+    font-size:14px
+    width:150px
+    height:150px
+    background: url(/images/sprites.png) no-repeat
+    margin-left:22px
+    &:first-child
+      margin-left:0
+    a
+      padding-top:67px
+      text-align:center
+      display:block
+      color:rgb(65,65,65)
+      width:100%
+      height:100%
+      &:hover
+        color:white
+    &.orange
+      background-position: -400px 0
+    &.red1
+      background-position: -200px 0
+    &.green
+      background-position: 0 0
+
+.content
+  margin: 0 auto
+  width: 880px
+  max-width:840px
+  width:80%
+
+#aboutus
+  padding-top:50px
+  padding-bottom:30px
+  h2
+    font-size:35pt
+    color:white
+    font-weight:bold
+    text-indent:-0.5em
+  h3
+    font-size:35pt
+    color:white
+    font-weight:bold
+    text-align:right
+    margin-right:16%
+  background-color:dnd_color_orange
+.contactinfo
+  display:block
+  margin-bottom:25px
+  .homepage
+    color:white
+    padding-top:5px
+    min-height:22px
+    background:url(/images/sprites.png) no-repeat -400px -350px
+    :first-child
+      padding-left:27px
+  .mail
+    color:white
+    background:url(/images/sprites.png) no-repeat -400px -400px
+    :first-child
+      padding-left:27px
+
+#contacts
+  background-color:dnd_color_red
+  padding:10% 0 10% 0
+  a
+    min-height:42px
+    text-indent:80px
+    color:white
+    font-size:15pt
+    font-weight:bold
+    padding-top:20px
+    display:block
+    &.fb
+      background:url(/images/sprites.png) no-repeat -200px -200px
+    &.tw
+      background:url(/images/sprites.png) no-repeat -200px -270px
+
+#blog
+  padding:10% 0 10% 0
+  background-color:white
+  a
+    color:dnd_color_orange
+    display:block
+    text-indent:80px
+    padding-top:20px
+    min-height:42px
+    font-size:15pt
+    font-weight:bold
+    background:url(/images/sprites.png) no-repeat -200px -350px
+
+.member-photo
+  display:block
+  background-repeat:no-repeat
+  background-position:0 0
+  width:120px
+  height:120px
+  &:hover
+    background-position:0 -120px
+.member-desc
+  margin-left:20px
+  padding-top:30px
+  color:white
+  hgroup
+    margin-bottom:10px
+  h4
+    font-size:12pt
+  h5
+    font-weight:normal
+    font-size:11pt
+  a
+    color:white
+    &:hover
+      color:dnd_color_red
+
+.bg-iphone4
+  background:url(/images/bg_iphone4.png) no-repeat 0 0
+  //height:660px
+  position:relative
+  background-size:100%
+  overflow:hidden
+  &.span_6_of_12
+    height:801px
+  &.span_4_of_12
+    height:526px
+  &.span_3_of_12
+    height:388px
+
+.screenshot
+  display:block
+  position:absolute
+  left:11.2%
+  top:17.5%
+  width:77.6%
+.glare
+  position:absolute
+  left:57%
+  top:17.2%
+  background:url(/images/bg_glare.png) no-repeat 0 0
+  background-size:100%
+  width:32%
+  height:31.5%
+
+#first-halo
+  margin-top:80px
+  h1
+    margin:120px 0 20px 20px
+    color:textcolor2
+    font-size:30pt
+    font-weight:Bold
+  p
+    margin:7px 0 0 20px
+    color:textcolor2
+    font-size:12pt
+    font-weight:light
+  .button
+    background:url(/images/icn_apple.png) no-repeat 12px 11px
+    background-size:20px
+    background-color:dnd_color_red
+    text-indent:15px
+    margin-top:30px
+    margin-left:20px
+    &:hover
+      background-color:dnd_color_orange
+
+
+
+.button
+  display:block
+  background-color:dnd_color_red
+  color:#fafafa
+  font-size:13pt
+  font-weight:bold
+  border-radius:5px
+  width:160px
+  text-align:center
+  padding-top:15px
+  padding-bottom:15px
+  border:0
+  &:hover
+    background-color:dnd_color_orange
+
+
+.features
+  margin-top:30px
+  margin-bottom:30px
+  color:dnd_color_11
+  h2
+    font-size:20pt
+    color:dnd_color_red
+    font-weight:bold
+    margin-top:20%
+    margin-bottom:20px
+  p
+    font-size:12pt
+    margin-bottom:15px
+
+  ul.desc
+    color:dnd_color_11
+    margin-top:10px
+    padding-left:17px
+    li
+      margin-bottom:5px
+
 #logo
   background:url(/images/title.gif) no-repeat 0 0
   text-indent:-99999px
@@ -64,21 +275,79 @@ a
   color:#aaa
 #copyright
   color:#aaa
-#phone-image
-   height:978px + 50px
-   background:url(/images/app-iphone5.jpg) no-repeat 0 50px
-#discover-image
-   height:978px + 50px
-   background:url(/images/teaser_discover.jpg) no-repeat 0 50px
-#create-image
-   height:978px + 50px
-   background:url(/images/teaser_create.jpg) no-repeat 0 50px
-#gomap-image
-   height:978px + 50px
-   background:url(/images/teaser_go_map.jpg) no-repeat 0 50px
-#remember-image
-   height:978px + 50px
-   background:url(/images/teaser_remember1.jpg) no-repeat 0 50px
-#text-image
-   height:978px + 50px
-   background:url(/images/teaser_text.jpg) no-repeat 0 50px
+
+#tothetop
+  position:fixed
+  bottom:50px
+  right:50px
+  display:block
+  height:50px
+  width:35px
+  overflow:hidden
+  background:url(/images/sprites.png) no-repeat 0 -400px
+  text-indent:-1000px
+
+// beta page
+#beta 
+  padding:50px 0 50px 0
+  background:url(/images/beta_flag.png) no-repeat 0 0
+  background-color:dnd_color_green
+  hgroup
+    padding-left:20%
+  h2
+    font-size:35pt
+    color:white
+    font-weight:bold
+  h3
+    font-size:23pt
+    font-weight:normal
+    color:white
+    margin-right:16%
+  ul
+    margin-top:20px
+    color:white
+    padding-left:22%
+    font-size:12pt
+    li
+      margin-bottom:5px
+  form
+    text-align:center
+    padding-top:25px
+    color:white
+    font-size:13pt
+    p
+      margin-top:30px
+    #email
+      color:#444
+    .button
+      margin: 0 auto
+      background-color:dnd_color_orange
+      &:hover
+        background-color:dnd_color_red
+      cursor:pointer
+  .error
+    background-color:dnd_color_red
+    border-radius:5px
+    color:white
+    padding: 10px 0 10px 0
+    width:50%
+    margin: 0 auto
+
+#submitted
+  background:url(/images/check.png) no-repeat 50% 0
+  min-height: 180px
+  padding-top:180px
+  h5
+    color:white
+    text-align:center
+    font-size:20pt
+  p
+    color:#ddd
+    margin:20px auto 
+    width:70%
+    padding-left:20px
+    font-size:12pt
+  .your-email
+    color:white
+  a
+    color:white

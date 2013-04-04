@@ -1,174 +1,247 @@
 extends layout
 
 block content
-	div.container_12#main-container
-		div#phone-image.grid_6.alpha
-			p(style="margin:580px 0 0 118px")
-				a.betabutton(href="/beta") Apply for Beta!
-		div.grid_6.omega
-			h1#logo Doors & Dots
-			h2#slogan — We live our lives between Doors & Dots. —
-			div
-				p.desc Quickly and easily create, discover, and share meetings, be they professional or social, planned or spontaneous, public or private.
-				p.desc &nbsp
-				p.desc Invite multiple friends at once with just the touch of a button.
-				p.desc &nbsp
-				p.desc Sync meetings and events with your mobile device calendar.
-				p.desc &nbsp
-				p.desc Share current location, travel, and other information with friends en route to meetings.
-				p.desc &nbsp
-				p.desc Take and share photos, and enjoy a photo narrative of your memories.
-				
+  nav#global-nav.section.group.content
+    ul
+      li.red1
+        a.red1(href="#first-halo") Doors &amp; Dots
+      li.orange
+        a.orange(href="#aboutus") About us
+      li.green
+        a.green(href="/doorsndots-presskit.zip") Press Kit
+      li.red1
+        a.red1(href="#contacts") Contacts
+      li.orange
+        a.orange(href="http://blog.easi6.com",target="_blank") Blog
 
-				p.tweet Tweets from @doorsndots
-				<a class="twitter-timeline" width="460" height="150" data-link-color="#54abd1" href="https://twitter.com/doorsndots" data-widget-id="271479541992669184">Tweets by @doorsndots</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-		div.grid_12.alpha.omega#info
-			div
-				p.desc &nbsp						
-			p.prefix_1.grid_4.suffix_1.alpha#whomade
-				| Doors & Dots is proudly made by 
-				a(href="http://easi6.com#members", target="_blank") easi6
-				| <br /> Check out our stories in 
-				a(href="http://blog.easi6.com", target="_blank") The Team Blog
-			p.prefix_1.grid_5.suffix_1.alpha#comingsoon 
+  article#first-halo.section.group.content
+    .bg-iphone4.col.span_6_of_12
+      img(src="/images/img_app_meetinglist.png").screenshot
+      .glare
+    section.col.span_6_of_12
+      h1 Doors &amp; Dots
+      p Quickly and easily create, discover, and share meetings, be they professional or social, planned or spontaneous, public or private.
+      p Invite multiple friends at once with just the touch of a button.
+      p Sync meetings and events with your mobile device calendar.
+      p Share current location, travel, and other information with friends en route to meetings.
+      p Take and share photos, and enjoy a photo narrative of your memories.
+      a(href="#beta").button Get the app
+      p(style="font-size:10pt;color:#aaa") Doors &amp; Dots will be available at App Store soon.
+  article.section.group.features.content
+    section.col.span_4_of_12
+      h2 Create &amp; View
+      p Create meetings quickly and easily:
+      ul.desc
+        li Why - Bubble Tea Study Break
+        li With Whom - The Ballroom Dance Team (Group Invite)
+        li Where - The Teahouse
+        li When - 30 Minutes From Now!
+      p View all the meeting details in a single, organized display; comment among your friends; add activities to your mobile device calendar; and, take and share photos!
+    .bg-iphone4.col.span_4_of_12
+      img(src="/images/img_app_newmeeting.png").screenshot
+      .glare
+    .bg-iphone4.col.span_4_of_12
+      img(src="/images/img_app_meeting.png").screenshot
+      .glare
+  article.section.group.features.content
+    .bg-iphone4.col.span_4_of_12
+      img(src="/images/img_app_map.png").screenshot
+      .glare
+    .bg-iphone4.col.span_4_of_12
+      img(src="/images/img_app_text.png").screenshot
+      .glare
+    section.col.span_4_of_12
+      h2 Invitations &amp; Location Features
+      p Send out text and email invites to friends in your mobile device contact list and to friends that do not use smartphones.
+      p Share your real-time location, travel, and other information en route to meetings, using unique Doors &amp; Dots features like on-map chatting (synced with meeting comments) and photo uploading!
 
-		div.grid_12.alpha
-			p.prefix_3.alpha#how
-		
-		div.grid_6.omega
-			div
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desctop Think Soon: 
-				p.desc &nbsp
-				p.desc Discover all upcoming meetings in one place.
-				p.desc &nbsp
-				p.desc See all the meetings that you’ve made, been invited to, your friends have joined, or that are open to all users in your neighborhood.
-				p.desc &nbsp
-				p.desc They’re all meetings – no need to sift through grumpy cat memes and ugly breakups.
+  div#aboutus
+    article.section.group.content
+      hgroup
+        h2 “Solve common problems<br/>with uncommon technologies.”
+        h3 <span style="font-weight:normal">－</span>easi6
+      div.section.group.contactinfo
+        a(href="http://easi6.com").col.span_5_of_12.homepage
+          p easi6.com
+        a(href="mailto:info@easi6.com").col.span_7_of_12.mail
+          p info@easi6.com / 364 Marin Blvd. 2fl Jersey City, NJ 07302
+      div.section.group.members
+        section.col.span_7_of_12
+          a(style="background-image:url(/images/members/kay.png)").member-photo.col.span_4_of_12
+          div.col.span_8_of_12.member-desc
+            hgroup
+              h4 Kay Woo
+              h5 Founder &amp; Executive
+            a(href="mailto:kay.woo@easi6.com") kay.woo@easi6.com
 
-		div#discover-image.grid_6.omega
-		
-		div#create-image.grid_6.omega
-		div.grid_6.alpha
-			div
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desctop Fast & Easy:
-				p.desc &nbsp
-				p.desc Four questions and go!
-				p.desc &nbsp
-				p.desc &nbsp &nbsp &nbsp &nbsp &nbsp-Why → Bubble Tea Study Break
-				p.desc &nbsp &nbsp &nbsp &nbsp &nbsp-With Whom → The Snowboarding Club
-				p.desc &nbsp &nbsp &nbsp &nbsp &nbsp-Where → The Old Teahouse
-				p.desc &nbsp &nbsp &nbsp &nbsp &nbsp-When → 30 Minutes From Now!
-				p.desc &nbsp
-				p.desc Organize and invite entire groups of your friends at once.
-				p.desc &nbsp
-				p.desc Let us learn you, and we’ll suggest meetings to you based on your history.
-		
-		div.grid_12.alpha
-			p.prefix_3.desc &nbsp
+        section.col.span_5_of_12
+          a(style="background-image:url(/images/members/jhhan.png)").member-photo.col.span_2_of_12
+          div.col.span_7_of_12.member-desc
+            hgroup
+              h4 Jaehwa Han
+              h5 Lead Engineer
+            a(href="mailto:drh@easi6.com") drh@easi6.com
 
-			
+      div.section.group.members
+        section.col.span_7_of_12
+          a(style="background-image:url(/images/members/jordan.png)").member-photo.col.span_2_of_12
+          div.col.span_8_of_12.member-desc
+            hgroup
+              h4 Jordan J. Jarecki
+              h5 Growth Operation
+            a(href="mailto:jordan.j@easi6.com") jordan.j@easi6.com
 
-		div.grid_6.omega
-			div
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				P.desctop Always In The Loop:
-				p.desc &nbsp
-				p.desc Show off Doors & Dots to your friends, and invite them to join.
-				p.desc &nbsp
-				p.desc While you wait, create a meeting and send a summary of the meeting details to your friends via text message.
-				p.desc &nbsp
-				p.desc Keep all of your friends in the loop for any meeting, including friends without smartphones.
-		div#text-image.grid_6.omega		
+        section.col.span_5_of_12
+          a(style="background-image:url(/images/members/james.png)").member-photo.col.span_2_of_12
+          div.col.span_7_of_12.member-desc
+            hgroup
+              h4 James M. Park
+              h5 iOS Developer
+            a(href="mailto:spica@easi6.com") spica@easi6.com
 
-		div.grid_12.alpha
-			p.prefix_3.desc &nbsp
+      div.section.group.members
+        section.col.span_7_of_12
+          a(style="background-image:url(/images/members/beomki.png)").member-photo.col.span_2_of_12
+          div.col.span_8_of_12.member-desc
+            hgroup
+              h4 Beomki Lee
+              h5 Back-end Developer
+            a(href="mailto:c0untd0wn@easi6.com") c0untd0wn@easi6.com
+        section.col.span_5_of_12
+          a(style="background-image:url(/images/members/blank.png)").member-photo.col.span_2_of_12
+          div.col.span_7_of_12.member-desc
+            hgroup
+              h4 Sunny Hong
+              h5 Designer
+            a(href="mailto:sunny.hong12@gmail.com") sunny.hong12@gmail.com
+      div.section.group.members
+        section.col.span_7_of_12
+          a(style="background-image:url(/images/members/blank.png)").member-photo.col.span_2_of_12
+          div.col.span_8_of_12.member-desc
+            hgroup
+              h4 Minjin Shin
+              h5 Designer
+            a(href="mailto:mjjk35@gmail.com") mjjk35@gmail.com
+  div#contacts
+    div.section.group.content
+      a(href="http://https://www.facebook.com/doorsndots").col.span_7_of_12.fb
+        |Keep in touch
+      a(href="https://twitter.com/doorsndots").col.span_5_of_12.tw
+        |Keep updating news
+  div#blog
+    div.section.group.content
+      a(href="http://blog.easi6.com")
+        |Visit our blog
+  a(href="#")#tothetop top
 
-		div#gomap-image.grid_6.omega	
-		div.grid_6.omega
-			div
-				p.desc &nbsp			
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desctop Made For Mobile:
-				p.desc &nbsp
-				p.desc View meeting details in a single, organized display.				
-				p.desc &nbsp
-				p.desc Join meetings and sync them with your mobile device calendar and the iCloud.
-				p.desc &nbsp
-				p.desc Share real-time location, travel, and other information en route to meetings.
-		
-	
-		div.grid_12.alpha
-			p.prefix_3.desc &nbsp		
+  div#beta
+    div.section.group.content
+      - if (mode !== "thanks") {
+      hgroup
+        h2 Get in at the Beginning!
+        h3 Apply for beta testing
 
-		
+      ul
+        li See the app before it hits the Apple App Store.
+        li Help us find and eliminate bugs.
+        li Provide us with your personal feedback.
 
-		div.grid_6.omega
-			div
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desc &nbsp
-				p.desctop As Time Goes By:
-				p.desc &nbsp
-				p.desc Take and share photos during meetings, and they’ll be saved in Remember.
-				p.desc &nbsp
-				p.desc Enjoy a narrative of your meetings and memories with friends.
-				p.desc &nbsp
-				p.desc Look back at previous meetings to know who attended, where you went, and when.
-		div#remember-image.grid_6.omega		
-		
-		
-		div.grid_12.alpha
-			p.prefix_3.desc &nbsp
+      form(action="/beta/apply", method="POST")
+        p
+          input(id="male", name="sex", value="male", type="radio", style="font-size:12pt;")
+          label(for="male",style="margin-right:40px;font-size:12pt") Male
+          input(id="female", name="sex", value="female", type="radio", style="font-size:12pt;")
+          label(for="female", style="font-size:12pt") Female
+        p How did you hear about Doors & Dots?<br/>
+          select(name="how",style="width:35%;font-size:12pt;height:30px;-webkit-appearance:menulist-button;margin-top:20px;")
+            option(value="demo") Demo
+            option(value="facebook") Facebook
+            option(value="twitter") Twitter
+            option(value="printmedia") Print Media
+            option(value="friend") Friend
+            option(value="webpage") Webpage
+        p.grid_6.suffix_1.prefix_1.alpha.omega(style="text-align:center;margin-top:30px;margin-bottom:30px;")
+          input(id="email",name="email",style="border-radius:5px;border:1px solid #bbb;width:50%;font-size:20pt;height:40px;text-align:center",type="text", placeholder="your email")
+        - if (typeof(error) !== 'undefined') {
+        p.error= error
+        -}
+        p(style="text-align:center;margin-bottom:30px;")
+          input.button(type="submit", value="Submit")
 
-				
-		
-		div.grid_12.alpha
-			p.prefix_3.desc &nbsp			
-		
-		div.grid_6.alpha#copyright Copyright © 2013 easi6, Inc. - All Rights Reserved    
-		div.grid_6.omega#copyright &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Doors & Dots will be available in the App store soon.
-		
+      - } else {
+      div.section.group.content
+        article#submitted
+          h5 Submitted
+          p Thanks for signing up to beta test Doors & Dots, the fast, easy way to create, discover, and share meetings and events with friends.
+          p You should soon receive an email to <span class="your-email">#{email}</span>, detailing how to download Doors & Dots to your iPhone device and start creating meetings.
+          p For the latest news and developments about Doors & Dots, check out Doors & Dots on Twitter (<a href="https://twitter.com/doorsndots">@doorsndots</a>), follow the <a href="http://blog.easi6.com">Discover easi6</a> blog, and like easi6 <a href="https://facebook.com/doorsndots">on Facebook</a>.
+      - }
+  script
+    function getUrlVars() {
+      var vars = [], hash;
+      var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+      for(var i = 0; i < hashes.length; i++) {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+      }
+      return vars;
+    }
+
+    function login() {
+      FB.login(function(response) {
+        if (response.authResponse) {
+          facebookLoaded();
+        } else {
+          $("#email").removeAttr("disabled");
+          $("#email").val("");
+          $("[type=submit]").unbind("click");
+          $("[type=submit]").val("Submit");
+        }
+      }, {scope: "email"});
+
+      return false;
+    }
+
+    function facebookLoaded() {
+      var queries = getUrlVars();
+      if (queries.ref !== "notif")
+        return;
+      //disable submit button for a while
+      var btn = $("[type=submit]")
+      btn.attr("disabled",true);
+      btn.val("Loading...");
+
+      $("#email").attr("disabled", true);
+      $("#email").val("Click the Facebook button");
+
+      FB.getLoginStatus(function(response) {
+        btn.removeAttr("disabled");
+        if (response.status === "connected") { 
+          FB.api('/me', function(response) {
+            if (response.gender === "male")
+              $("#male").attr("checked", true);
+            else if (response.gender === "female") 
+              $("#female").attr("checked", true);
+            $("[name=how]").val("facebook");
+
+            $("#email").removeAttr("disabled");
+            $("#email").val("");
+
+            if (typeof response.email !== "undefined") {
+              $("#email").val(response.email);
+            }
+
+            btn.val("Submit");
+            btn.unbind("click");
+          });
+        } else if (response.status === "not_authorized") {
+          //add dummy button to email box
+          btn.val("Facebook Login");
+          btn.click(login);
+        } else {
+          btn.val("Facebook Login");
+          btn.click(login);
+        }
+      });
+    }

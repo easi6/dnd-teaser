@@ -64,12 +64,13 @@ exports.apply = function(check, sanitize, db, ses) {
       db.run("INSERT INTO applicants VALUES (?, ?, ?)", email, how, sex, function(error) {
 				if (error) {
           console.log("error : " + error.message);
-					return res.render("beta.jade", {title:"Doors & Dots", error: "Sorry. Something went wrong."});
+					return res.redirect("/?error=Sorry,%20Something%20went%20wrong.#beta")
 				}
-				res.redirect('/beta/thanks?email='+encodeURIComponent(email));
+        console.log("try to redirect to beta section")
+				res.redirect('/?mode=thanks&email='+encodeURIComponent(email)+"#beta");
 			});
 		} catch (e) {
-			return res.render("beta.jade", {title:"Doors & Dots", error:"Please enter a valid email."});
+			return res.redirect("/?error=Please%20enter%20a%20valid%20email.#beta");
 		}
 	};
 };
