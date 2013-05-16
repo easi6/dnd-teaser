@@ -44,6 +44,9 @@ app.post('/beta/apply', beta.apply(check, sanitize, db, ses));
 app.get('/beta/thanks', beta.thanks);
 app.post('/git/pushed', git.pushed);
 app.get('/m', routes.index);
+app.get("/app", function(req, res) { 
+  res.redirect(301, "https://itunes.apple.com/us/app/doors-dots/id632302180?mt=8");
+});
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
