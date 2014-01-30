@@ -1,4 +1,4 @@
-doctype 5
+doctype html
 html
   head
     <meta property="og:title" content="Doors &amp; Dots" />
@@ -27,18 +27,16 @@ html
 
   body
     #fb-root
-    script
+    script(type="text/javascript").
       window.fbAsyncInit = function() {
-        // init the FB JS SDK
         FB.init({
-          appId      : '403834713009435', // App ID from the App Dashboard
-          channelUrl : '//doorsndots.com/channel.html', // Channel File for x-domain communication
-          status     : true, // check the login status upon init?
-          cookie     : true, // set sessions cookies to allow your server to access the session?
-          xfbml      : true  // parse XFBML tags on this page?
+          appId: "403834713009435",
+          channelUrl: "//doorsndots.com/channel.html",
+          status: true,
+          cookie: true,
+          xfbml: true
         });
 
-        // Additional initialization code such as adding Event Listeners goes here
         if (typeof facebookLoaded !== "undefined") {
           facebookLoaded();
         }
@@ -57,7 +55,7 @@ html
        }(document, /*debug*/ false));
     block content
 
-    script
+    script(type="text/javascript").
       $(document).ready(function() {
         $(".vimeo").colorbox({iframe:true, innerWidth:500, innerHeight:281});
       });
